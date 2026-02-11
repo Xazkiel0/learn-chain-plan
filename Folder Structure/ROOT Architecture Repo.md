@@ -1,0 +1,14 @@
+PROJECT ROOT
+- **APPS**
+	- FE (Frontend App (User-facing))
+	- DOCS (Documentation App (Component explorer + API docs))
+	- BE (Backend App (API Server))
+- **PACKAGES**
+	- UI (Shared UI Component Library (dipakai FE & Docs))
+	- TYPES (Shared Type Definitions (FE & BE contract))
+	- CONFIG (Shared configs (eslint, tsconfig, tailwind, etc))
+	- UTILS (Shared pure utilities)
+- .env
+- package.json
+- turbo.json / nx.json (optional)
+- README.md
