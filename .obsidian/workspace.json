@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d8618703f580bfbd",
+        "id": "d249943c933223a5",
         "type": "tabs",
         "children": [
           {
-            "id": "588f52b0b66a8c95",
+            "id": "3056e9dd6412f88a",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Drawing 2026-02-11 12.43.47.excalidraw.md"
+                "file": "Folder Structure/Format Dokumentasi API di Docs (Standar yang Harus Dipakai).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-02-11 12.43.47.excalidraw"
+              "icon": "lucide-file",
+              "title": "Format Dokumentasi API di Docs (Standar yang Harus Dipakai)"
             }
           }
         ]
@@ -194,9 +196,17 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "588f52b0b66a8c95",
+  "active": "3056e9dd6412f88a",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2026-02-11 12.43.47.excalidraw.md",
+    "Excalidraw/Folder Structure.excalidraw.md",
+    "Folder Structure/Shared Types Architecture Repo.md",
+    "Folder Structure/Format UI Component Documentation (Docs).md",
+    "Folder Structure/FRONTEND Architecture Repo.md",
+    "Folder Structure/UI Architecture Repo.md",
+    "Folder Structure/ROOT Architecture Repo.md",
+    "Folder Structure/BACKEND Architecture Repo.md",
+    "Folder Structure/DOCS Architecture Repo.md",
+    "Folder Structure/Format Dokumentasi API di Docs (Standar yang Harus Dipakai).md",
     "Excalidraw/monorepo-clean-architecture.excalidraw",
     "Excalidraw/Unconfirmed 512561.crdownload",
     "Excalidraw",
