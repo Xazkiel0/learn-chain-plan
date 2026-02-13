@@ -1,0 +1,74 @@
+// title
+title LearnChain MVP Data Model
+
+// define tables
+users [icon: user, color: yellow]{
+  id string pk
+  email string
+  password_hash string
+  role string
+  wallet_address string
+  is_active boolean
+  is_scholarship boolean
+  created_at timestamp
+}
+
+courses [icon: book, color: blue]{
+  id string pk
+  teacher_id string
+  title string
+  description string
+  price decimal
+  is_crowdfundable boolean
+  status string
+  syllabus_version string
+  created_at timestamp
+}
+
+enrollments [icon: edit-3, color: green]{
+  id string pk
+  user_id string
+  course_id string
+  status string
+  progress integer
+  enrolled_at timestamp
+  completed_at timestamp
+}
+
+crowdfunding_campaigns [icon: dollar-sign, color: orange]{
+  id string pk
+  course_id string
+  student_id string
+  target_amount decimal
+  total_funded decimal
+  state string
+  vault_contract_address string
+  created_at timestamp
+}
+
+funding_transactions [icon: credit-card, color: purple]{
+  id string pk
+  campaign_id string
+  funder_id string
+  amount decimal
+  tx_hash string
+  created_at timestamp
+}
+
+certificates [icon: award, color: red]{
+  id string pk
+  enrollment_id string
+  certificate_hash string
+  metadata_uri string
+  issued_at timestamp
+}
+
+// define relationships
+courses.teacher_id > users.id
+enrollments.user_id > users.id
+enrollments.course_id > courses.id
+crowdfunding_campaigns.course_id > courses.id
+crowdfunding_campaigns.student_id > users.id
+funding_transactions.campaign_id > crowdfunding_campaigns.id
+funding_transactions.funder_id > users.id
+certificates.enrollment_id - enrollments.id

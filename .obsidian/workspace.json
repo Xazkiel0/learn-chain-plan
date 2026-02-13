@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "d249943c933223a5",
+        "id": "897693fcdc409a1e",
         "type": "tabs",
         "children": [
           {
-            "id": "3056e9dd6412f88a",
+            "id": "78d7b026637592c9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Folder Structure/Format Dokumentasi API di Docs (Standar yang Harus Dipakai).md",
+                "file": "Cores Project Context/System Architecture Overview.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "System Architecture Overview"
+            }
+          },
+          {
+            "id": "356a3998e22f637d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Plan Scroller.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Format Dokumentasi API di Docs (Standar yang Harus Dipakai)"
+              "title": "Plan Scroller"
+            }
+          },
+          {
+            "id": "53c3325337c6d978",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cores Project Context/Project Overview & Goals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Project Overview & Goals"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/Drawing 2026-02-11 12.43.47.excalidraw.md",
+                "file": "Plan Scroller.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Drawing 2026-02-11 12.43.47.excalidraw"
+              "title": "Backlinks for Plan Scroller"
             }
           },
           {
@@ -113,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cores Project Context/System Architecture Overview.md",
+                "file": "Plan Scroller.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from System Architecture Overview"
+              "title": "Outgoing links from Plan Scroller"
             }
           },
           {
@@ -156,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cores Project Context/System Architecture Overview.md",
+                "file": "Plan Scroller.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of System Architecture Overview"
+              "title": "Outline of Plan Scroller"
             }
           },
           {
@@ -174,9 +203,19 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "6a215f5baf767086",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {},
+              "icon": "lucide-info",
+              "title": "File properties"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -196,31 +235,42 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "3056e9dd6412f88a",
+  "active": "2ac34ee899e78123",
   "lastOpenFiles": [
-    "Excalidraw/Folder Structure.excalidraw.md",
-    "Folder Structure/Shared Types Architecture Repo.md",
-    "Folder Structure/Format UI Component Documentation (Docs).md",
-    "Folder Structure/FRONTEND Architecture Repo.md",
-    "Folder Structure/UI Architecture Repo.md",
-    "Folder Structure/ROOT Architecture Repo.md",
-    "Folder Structure/BACKEND Architecture Repo.md",
-    "Folder Structure/DOCS Architecture Repo.md",
-    "Folder Structure/Format Dokumentasi API di Docs (Standar yang Harus Dipakai).md",
-    "Excalidraw/monorepo-clean-architecture.excalidraw",
-    "Excalidraw/Unconfirmed 512561.crdownload",
-    "Excalidraw",
-    "TODO List Scopes.md",
-    "Deskripsi Lengkap Proyek.md",
+    "relabel_tree.py",
+    "scan_headers.py",
+    "cleanup_plan_v2.py",
+    "cleanup_plan.py",
+    "restructure_plan.py",
+    "process_md.py",
+    "Cores Project Context/System Architecture Overview.md",
+    "Plan Scroller.md",
     "Cores Project Context/Project Overview & Goals.md",
-    "Cores Project Context/Stakeholders, Roles & Workflow.md",
+    "System Intent — LearnChain (MVP).md",
+    "Excalidraw/Folder Structure.excalidraw.md",
+    "diagram-eraser-erd.png",
+    "Folder Structure/FRONTEND Architecture Repo.md",
+    "Folder Structure/BACKEND Architecture Repo.md",
+    "TODO List Scopes.md",
     "Cores Project Context/User & Use Cases.md",
     "Cores Project Context/Business Rules & Assumptions.md",
+    "Cores Project Context/Stakeholders, Roles & Workflow.md",
+    "Web2 vs Web3 Responsibility Matrix (MVP FINAL).md",
+    "Excalidraw/Drawing 2026-02-12 10.13.24.excalidraw.md",
+    "code-erd.txt",
+    "Unconfirmed 240063.crdownload",
+    "Unconfirmed 96344.crdownload",
+    "Deskripsi Lengkap Proyek.md",
+    "Folder Structure/UI Architecture Repo.md",
+    "Folder Structure/ROOT Architecture Repo.md",
+    "Folder Structure/Format Dokumentasi API di Docs (Standar yang Harus Dipakai).md",
+    "Folder Structure/Shared Types Architecture Repo.md",
+    "Folder Structure/Format UI Component Documentation (Docs).md",
+    "Folder Structure/DOCS Architecture Repo.md",
+    "Excalidraw/monorepo-clean-architecture.excalidraw",
+    "Excalidraw/Unconfirmed 512561.crdownload",
     "Cores Project Context/Functional Requirements.md",
     "Cores Project Context/Non-Functional Requirements.md",
-    "Cores Project Context/System Architecture Overview.md",
-    "Untitled.md",
-    "Peran Pengguna dalam Sistem.md",
-    "Cores Project Context"
+    "Peran Pengguna dalam Sistem.md"
   ]
 }

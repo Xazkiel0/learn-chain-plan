@@ -1,17 +1,21 @@
 
 ```
-/packages/ui
+/apps/fe
 │
-├── components/
-│   ├── atoms/
-│   ├── molecules/
-│   ├── organisms/
-│   └── layouts/
+├── app/                    # Next.js / Router
 │
-├── hooks/
-├── styles/
-├── theme/
-└── index.ts
+├── modules/                # Feature-based structure
+│   ├── auth/
+│   ├── dashboard/
+│   └── user/
+│
+├── services/               # API layer (fetchers)
+├── store/                  # State management
+├── lib/                    # App-specific utilities
+├── constants/
+├── types/                  # Local FE types (jika tidak global)
+└── middleware/
+
 ```
 
 
