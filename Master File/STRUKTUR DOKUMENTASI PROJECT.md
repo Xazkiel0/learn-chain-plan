@@ -1,6 +1,6 @@
 ## STRUKTUR DOKUMENTASI — SMALL TEAM / SMALL PROJECT
 
-### 1. Project Overview & Goals
+### 1. [[Project Overview & Goals]]
 
 > Apa yang dibangun, untuk siapa, dan definisi “selesai”
 
@@ -17,7 +17,7 @@ Menggabungkan:
 
 ---
 
-### 2. Stakeholders, Roles & Workflow
+### 2. [[Stakeholders, Roles & Workflow]]
 
 > Siapa melakukan apa, bagaimana koordinasi berjalan
 
@@ -32,7 +32,7 @@ Menggabungkan:
 
 ---
 
-### 3. User & Use Cases
+### 3. [[User & Use Cases]]
 
 > Siapa user dan apa yang mereka lakukan
 
@@ -49,7 +49,7 @@ Menggabungkan:
 
 ---
 
-### 4. Business Rules & Assumptions
+### 4. [[Business Rules & Assumptions]]
 
 > Aturan yang tidak boleh dilanggar dan asumsi penting
 
@@ -66,7 +66,7 @@ Catatan: file ini **sangat penting** untuk mencegah debat saat coding.
 
 ---
 
-### 5. Functional Requirements
+### 5. [[Functional Requirements]]
 
 > Fitur yang harus ada dan bagaimana perilakunya
 
@@ -83,7 +83,7 @@ Isi utama:
 
 ---
 
-### 6. Non-Functional Requirements
+### 6. [[Non-Functional Requirements]]
 
 > Kualitas sistem yang diharapkan
 
@@ -100,7 +100,7 @@ Isi ringkas:
 
 ---
 
-### 7. System Architecture Overview
+### 7. [[System Architecture Overview]]
 
 > Gambaran teknis besar sebelum masuk detail
 
@@ -117,7 +117,7 @@ Menggabungkan:
 
 ---
 
-### 8. Tech Stack & Rationale
+### 8. [[Tech Stack & Rationale]]
 
 > Apa yang dipakai dan kenapa
 
@@ -134,7 +134,7 @@ File ini mencegah gonta-ganti teknologi tanpa alasan.
 
 ---
 
-### 9. API & Backend Design
+### 9. [[API & Backend Design]]
 
 > Kontrak antar sistem
 
@@ -151,7 +151,7 @@ Menggabungkan:
 
 ---
 
-### 10. Database & Data Design
+### 10. [[Database & Data Design]]
 
 > Struktur data sebagai fondasi sistem
 
@@ -168,7 +168,7 @@ Menggabungkan:
 
 ---
 
-### 11. Frontend & UI Guidelines
+### 11. [[Frontend & UI Guidelines]]
 
 > Cara tampilan dan perilaku UI
 
@@ -185,7 +185,7 @@ Menggabungkan:
 
 ---
 
-### 12. Security & Error Handling
+### 12. [[Security & Error Handling]]
 
 > Pencegahan masalah serius
 
@@ -202,7 +202,7 @@ Menggabungkan:
 
 ---
 
-### 13. Development Standards
+### 13. [[Development Standards]]
 
 > Cara tim menulis dan mengelola kode
 
@@ -217,7 +217,7 @@ Menggabungkan:
 
 ---
 
-### 14. Testing & Quality Assurance
+### 14. [[Testing & Quality Assurance]]
 
 > Cara memastikan sistem bekerja
 
@@ -232,7 +232,7 @@ Menggabungkan:
 
 ---
 
-### 15. Deployment & Maintenance
+### 15. [[Deployment & Maintenance]]
 
 > Cara sistem hidup setelah selesai dibuat
 
