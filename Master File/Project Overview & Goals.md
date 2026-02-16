@@ -1,8 +1,15 @@
+# 1. Project Overview & Goals
 
-## 1. Project Overview
+## 1.1 Project Overview
 
 Proyek ini adalah **platform pembelajaran berbasis Web3** yang memungkinkan pengajar menyediakan course berbayar, pelajar mengikuti course tersebut, serta pembayaran dan sertifikasi dicatat secara **on-chain tanpa kustodi**.
 
+Platform ini mengadopsi pendekatan **Web2.5 (Hybrid Web2 + Web3)**:
+
+- **Web2** digunakan untuk pengalaman pengguna dan manajemen sistem (autentikasi, manajemen user & course, progress pembelajaran, UI/UX).
+    
+- **Web3** digunakan secara selektif untuk hal kritikal yang membutuhkan trust layer (alur dana non-kustodial, crowdfunding vault via smart contract, dan pencatatan sertifikat immutable).
+    
 Sistem dirancang untuk:
 
 - Menghilangkan peran pihak ketiga sebagai pemegang dana (non-custodial)
@@ -12,6 +19,32 @@ Sistem dirancang untuk:
 - Menyediakan mekanisme **crowdfunding terkontrol** bagi pelajar yang dikategorikan “tidak mampu”
     
 - Menghasilkan **sertifikat berbasis blockchain** yang merepresentasikan penyelesaian course
+    
+- Menjaga pengalaman pengguna tetap sederhana tanpa membebani pengguna dengan kompleksitas blockchain
+    
+- Menetapkan batasan tegas agar admin tidak memiliki kuasa terhadap dana maupun hasil akademik
+    
+Catatan model course pada MVP:
+
+- Course dapat bersifat **Paid langsung** (enroll berbayar) atau **Crowdfundable** (khusus untuk pelajar yang ditandai “tidak mampu” oleh admin).
+    
+### Prinsip Pembayaran Non-Kustodial (Detail)
+
+- Semua pembayaran course dilakukan melalui wallet pengguna, tanpa dana mengendap di platform.
+    
+- Saat enrollment atau eksekusi crowdfunding:
+    
+    - **99% dana langsung masuk ke wallet pengajar**
+        
+    - **1% fee otomatis masuk ke wallet perusahaan**
+        
+### Sertifikat On-Chain (Bukan NFT Spekulatif)
+
+- Sertifikat direpresentasikan sebagai **hash + metadata yang dicatat on-chain**.
+    
+- Sertifikat bersifat immutable dan dapat diverifikasi publik.
+    
+- Sertifikat tidak bersifat spekulatif dan tidak transferable.
     
 
 Platform ini **bukan marketplace NFT spekulatif**, melainkan sistem edukasi dengan pencatatan kriptografis sebagai trust layer.
@@ -27,7 +60,7 @@ Target utama proyek adalah **aplikasi web end-to-end** yang mengintegrasikan:
 
 ---
 
-## 2. Target Users (Untuk Siapa)
+## 1.2 Target Users (Untuk Siapa)
 
 Platform ini ditujukan untuk tiga kelompok utama:
 
@@ -55,14 +88,34 @@ Platform ini ditujukan untuk tiga kelompok utama:
         
     - Tanpa kuasa terhadap dana dan hasil akademik
         
+Selain tiga kelompok utama di atas, ekosistem sistem juga dapat melibatkan **funder** (pemberi dana crowdfunding) sebagai partisipan finansial yang dapat memverifikasi transparansi campaign secara publik dan menarik dana kembali jika target tidak tercapai.
+
+### Peran (Role) pada MVP
+
+Pada MVP, sistem mengenal 4 role utama:
+
+1. **Guest** (pengunjung publik)
+2. **Pelajar (Student)**
+3. **Pengajar (Teacher)**
+4. **Admin (Platform Operator)**
+
+Catatan penting:
+
+- Semua role (kecuali Guest) adalah user terdaftar yang terhubung wallet.
+    
+- Guest bersifat read-only, tidak menyentuh dana, dan tidak berinteraksi dengan blockchain.
+    
+- Sistem tidak mengenal role ganda secara bebas pada MVP (misalnya Teacher ≠ Student), kecuali ditentukan eksplisit pada pengembangan lanjutan.
+    
 
 ---
+## 1.3 Problem Statement
 
-## 3. Problem Statement
+
 
 Masalah yang ingin diselesaikan oleh sistem ini:
 
-### 3.1. Ketergantungan pada pihak kustodian
+### 1. Ketergantungan pada pihak kustodian
 
 Platform edukasi tradisional:
 
@@ -73,7 +126,7 @@ Platform edukasi tradisional:
 - Rentan dispute dan manipulasi
     
 
-### 3.2. Tidak adanya transparansi dana
+### 2. Tidak adanya transparansi dana
 
 Pelajar dan pengajar:
 
@@ -82,23 +135,26 @@ Pelajar dan pengajar:
 - Tidak tahu secara pasti fee dan distribusi dana
     
 
-### 3.3. Akses pendidikan terbatas bagi pelajar tidak mampu
+### 3. Akses pendidikan terbatas bagi pelajar tidak mampu
 
 - Tidak ada mekanisme pendanaan terstruktur
     
 - Crowdfunding sering tidak terikat langsung ke kebutuhan nyata (course tertentu)
     
+  
+Dalam sistem ini, crowdfunding dibuat **terkontrol**: campaign selalu terikat pada **1 pelajar + 1 course**, dan hanya dapat dibuat oleh pelajar yang telah ditetapkan admin sebagai “tidak mampu”.
 
-### 3.4. Sertifikat mudah dipalsukan
+### 4. Sertifikat mudah dipalsukan
+
+
 
 - Sertifikat PDF atau database sentral mudah dimanipulasi
     
 - Tidak ada bukti kriptografis atas penyelesaian course
     
-
 ---
 
-## 4. Goals
+## 1.4 Goals
 
 ### Goal Utama (Primary Goals)
 
@@ -116,6 +172,10 @@ Pelajar dan pengajar:
         
     - Dana disimpan di smart contract vault
         
+    - Funder dapat menarik dana kembali jika target tidak tercapai
+        
+    - Campaign memiliki state yang eksplisit: `pending → target_reached → executed`
+        
 3. **On-chain certification**
     
     - Sertifikat direpresentasikan sebagai hash + metadata on-chain
@@ -130,12 +190,18 @@ Pelajar dan pengajar:
         
     - Admin tidak bisa memanipulasi hasil akademik
         
+5. **Explicit state over implicit logic**
+    
+    - State utama konsisten antara backend dan smart contract (Course/Campaign/Enrollment)
+        
 
 ---
 
-## 5. Success Criteria (Definisi Keberhasilan)
+## 1.5 Success Criteria (Definisi Keberhasilan)
 
 Sistem dianggap **berhasil** jika:
+
+
 
 1. Pelajar bisa:
     
@@ -167,14 +233,18 @@ Sistem dianggap **berhasil** jika:
         
     - Sertifikat yang bisa dicetak tanpa kelulusan sah
         
+    - Akses admin terhadap private key atau mekanisme pemindahan dana user
+        
 
 ---
 
-## 6. Definition of “Done” (Definisi Sistem Selesai)
+## 1.6 Definition of “Done” (Definisi Sistem Selesai)
+
 
 Sistem dianggap **selesai (MVP Done)** jika:
 
 ### Secara Fungsional
+
 
 - Course bisa dibuat, dibuka, dan ditutup
     
@@ -194,8 +264,18 @@ Sistem dianggap **selesai (MVP Done)** jika:
         
     - Final task approved
         
-
+  
+- State machine utama terdefinisi jelas:
+    
+    - Course state: `draft → open → closed`
+        
+    - Campaign state: `pending → target_reached → executed`
+        
+    - Enrollment state: `enrolled → in_progress → completed`
+        
 ### Secara Teknis
+
+
 
 - Tidak ada custodial wallet
     
@@ -203,15 +283,19 @@ Sistem dianggap **selesai (MVP Done)** jika:
     
 - Backend tidak menyimpan private key
     
-
+- Platform tidak memiliki custodial wallet dan tidak memiliki kemampuan admin-override untuk transaksi.
+    
+  
 ### Secara Produk
-
 - Fitur di luar MVP (secondary market, NFT trading, dll) **tidak ada**
     
 
+- Platform tidak memiliki custodial wallet dan tidak memiliki kemampuan admin-override untuk transaksi.
 ---
 
-## 7. Scope
+## 1.7 Scope
+    
+    
 
 ### In Scope (MVP)
 
@@ -248,14 +332,25 @@ Sistem dianggap **selesai (MVP Done)** jika:
     
 - Mobile app (native)
     
-
+- KYC atau verifikasi dokumen kompleks
+    
+- Konversi kripto ke fiat
+    
+- Course korporat / enterprise
+    
+- Sistem delegasi pengawas crowdfunding
+    
+- AI Course Assistant
+    
 Penegasan out-of-scope ini **wajib** agar tidak terjadi scope creep saat development.
 
 ---
 
-## 8. Guiding Principles
+## 1.8 Guiding Principles
 
 Sebagai penutup file ini, proyek mengikuti prinsip berikut:
+
+
 
 1. **Trust minimization**
     
@@ -266,3 +361,44 @@ Sebagai penutup file ini, proyek mengikuti prinsip berikut:
 4. **No admin override terhadap dana & akademik**
     
 5. **MVP-first, extensible later**
+    
+---
+
+## 1.9 Restriction & Allowed Scope (Ringkas)
+
+### Restriction Umum
+
+- Semua transaksi wajib wallet-connected.
+    
+- Tidak ada custodial wallet.
+    
+- Tidak ada admin override terhadap dana.
+    
+- Tidak ada manual progress override.
+    
+- Campaign tidak bisa dibuat bebas (harus menempel ke Course + Student).
+    
+### Restriction Pelajar
+
+- Tidak bisa enroll course closed.
+    
+- Tidak bisa membuat campaign jika tidak ditandai “tidak mampu” atau course tidak crowdfundable.
+    
+- Tidak bisa klaim sertifikat tanpa progress 100% dan final task approved.
+    
+### Restriction Pengajar
+
+- Tidak bisa mengubah course setelah closed.
+    
+- Tidak bisa approve final task sebelum progress 100%.
+    
+- Tidak bisa menarik dana crowdfund secara manual.
+    
+### Restriction Admin
+
+- Tidak bisa memicu eksekusi crowdfund.
+    
+- Tidak bisa mengubah state campaign.
+    
+- Tidak bisa menyetujui kelulusan pelajar atau mengeluarkan sertifikat.
+    

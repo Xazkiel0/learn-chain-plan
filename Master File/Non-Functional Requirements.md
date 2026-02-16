@@ -106,6 +106,36 @@ Semua signing dilakukan di client wallet.
 
 ---
 
+### NFR-SEC-05 — Smart Contract Auditability
+
+- Smart contract harus:
+    
+    - Verified di block explorer
+        
+    - Code source terbuka untuk publik
+        
+- Vault crowdfunding:
+    
+    - Transparan (siapa funder, berapa terkumpul)
+        
+    - Tidak ada hidden fee selain 1% platform fee
+        
+
+---
+
+### NFR-SEC-06 — Admin Financial Isolation
+
+- Admin platform:
+    
+    - **Tidak memiliki akses** ke dana user di smart contract
+        
+    - Tidak bisa memicu eksekusi crowdfunding secara paksa
+        
+    - Tidak bisa mengubah status kelulusan/akademik secara sepihak
+        
+
+---
+
 ## 6.4 Reliability & Consistency
 
 ### NFR-REL-01 — Transaction Consistency
@@ -147,6 +177,25 @@ Semua signing dilakukan di client wallet.
     - Tidak corrupt state
         
     - Menampilkan status “pending” secara jelas
+        
+
+---
+
+### NFR-REL-04 — Web2-Web3 State Synchronization
+
+- Konsistensi antara database backend (Web2) dan smart contract (Web3):
+    
+    - Course state (`draft`, `open`, `closed`)
+        
+    - Campaign state (`pending`, `target_reached`, `executed`)
+        
+    - Enrollment state (`enrolled`, `completed`)
+        
+- Mekanisme rekonsiliasi:
+    
+    - Backend harus mendengarkan event blockchain (listener)
+        
+    - Mengupdate database lokal secara real-time (atau near real-time)
         
 
 ---
@@ -193,6 +242,19 @@ Semua signing dilakukan di client wallet.
         
     - Claim certificate  
         harus ≤ 3 langkah utama
+        
+
+---
+
+### NFR-UX-04 — Role Clarity
+
+- Antarmuka harus:
+    
+    - Membedakan dengan jelas status Guest vs User (wallet connected)
+        
+    - Memberikan feedback "Connect Wallet" pada fitur yang membutuhkan akses Web3
+        
+    - Menampilkan role user (Student / Teacher / Admin) secara eksplisit
         
 
 ---
@@ -313,6 +375,25 @@ Tidak wajib alerting canggih di MVP.
 
 ---
 
+### NFR-PRIV-03 — On-Chain Privacy
+
+- Data di blockchain:
+    
+    - Tidak boleh mengandung PII (nama lengkap, email, alamat fisik)
+        
+    - Hanya menyimpan referensi hash (IPFS CID atau SHA256)
+        
+    - Transaksi bersifat publik (wallet address visible)
+        
+- Data crowdfunding:
+    
+    - Identitas penerima (Student) hanya link ke profil Web2 (optional)
+        
+    - Alasan finansial sensitif tidak dipublish on-chain
+        
+
+---
+
 ## 6.10 Non-Goals (Explicit)
 
 - 100% uptime
@@ -335,6 +416,8 @@ Sistem **tidak boleh dirilis** jika:
 - Enrollment bisa dibuat tanpa tx sah
     
 - Sertifikat bisa diklaim tanpa kelulusan
+    
+- Dana crowdfunding dicairkan tanpa target tercapai
     
 
 ---

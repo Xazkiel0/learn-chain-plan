@@ -41,6 +41,24 @@ Fitur sistem dikelompokkan menjadi:
 
 ## 5.3 User & Authentication
 
+### FR-G1 — Guest Access
+
+**Deskripsi**  
+Guest (pengunjung tanpa login) dapat mengakses informasi publik platform.
+
+**Perilaku**
+
+- Melihat listing course
+    
+- Melihat detail course (syllabus, harga, pengajar)
+    
+- Tidak bisa berinteraksi dengan smart contract
+    
+
+**Prioritas**: MVP
+
+---
+
 ### FR-U1 — User Registration
 
 **Deskripsi**  
@@ -71,7 +89,7 @@ User dapat menghubungkan wallet ke akun.
 
 - Wallet address disimpan sebagai financial identifier
     
-- Satu wallet ↔ satu user
+- Satu wallet ↔ satu user (Strict binding)
     
 
 **Edge Case**
@@ -170,9 +188,9 @@ Student dapat enroll course berbayar.
 
 - Smart contract:
     
-    - Transfer dana ke teacher
+    - Transfer dana ke teacher (99%)
         
-    - Potong fee platform
+    - Potong fee platform (1%)
         
 - Backend mencatat enrollment
     
@@ -219,6 +237,7 @@ Campaign otomatis dibuat saat student eligible memilih course crowdfundable.
 **Perilaku**
 
 - Campaign state: `pending`
+- Terikat: 1 Student + 1 Course
     
 
 **Prioritas**: MVP
@@ -271,6 +290,7 @@ Student mengeksekusi campaign.
     
 - Enrollment dibuat
     
+- State berubah ke `executed`
 
 **Edge Case**
 
@@ -306,7 +326,7 @@ Sistem menghitung progress otomatis.
 
 **Perilaku**
 
-- Progress meningkat berdasarkan modul selesai
+- Progress meningkat berdasarkan modul/aktivitas selesai
     
 - Tidak bisa diubah manual
     
@@ -398,6 +418,20 @@ Admin dapat menonaktifkan user.
 
 - Enrollment aktif tetap berjalan
     
+
+**Prioritas**: MVP
+
+---
+
+### FR-A3 — Admin Restrictions
+
+**Deskripsi**
+Batasan sistem untuk menjaga trust model Web3.
+
+**Perilaku**
+- Admin tidak bisa mengubah data akademik (nilai/progress)
+- Admin tidak bisa memindahkan dana user
+- Admin tidak bisa menerbitkan sertifikat manual
 
 **Prioritas**: MVP
 

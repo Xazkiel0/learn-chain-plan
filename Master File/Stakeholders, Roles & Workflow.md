@@ -1,3 +1,5 @@
+# 2. Stakeholders, Roles & Workflow
+
 ## 2.1 Stakeholders Overview
 
 Stakeholder dalam proyek ini dibagi menjadi **dua kategori besar**:
@@ -76,6 +78,48 @@ Pemisahan ini penting karena:
 - Backend (content & task review)
     
 - Smart contract (penerimaan dana)
+    
+
+---
+
+### 2.2.3 Funder (Pemberi Dana)
+
+**Peran dalam Sistem**
+
+- Partisipan finansial yang mendanai campaign crowdfunding
+    
+- Verifikator transparansi campaign publik
+    
+
+**Kepentingan Utama**
+
+- Dana hanya dicairkan jika target tercapai (trustless)
+    
+- Kemudahan refund (withdraw) jika campaign gagal
+    
+
+**Interaksi Utama**
+
+- Smart contract (deposit & refund)
+    
+
+---
+
+### 2.2.4 Guest (Pengunjung)
+
+**Peran dalam Sistem**
+
+- Calon pengguna potensial (belum login/connect wallet)
+    
+
+**Kepentingan Utama**
+
+- Eksplorasi katalog course tanpa hambatan login
+    
+
+**Interaksi Utama**
+
+- Frontend (read-only access)
     
 
 ---
@@ -232,7 +276,7 @@ Masing-masing alur **berdiri sendiri tapi saling terhubung**.
         
     - Mengirim dana ke wallet teacher
         
-    - Mengirim fee ke wallet platform
+    - Mengirim fee (1%) ke wallet platform
         
 4. Backend mencatat enrollment
     
@@ -257,11 +301,11 @@ Masing-masing alur **berdiri sendiri tapi saling terhubung**.
 
 ### Alur
 
-1. Student membuat campaign (implicit)
+1. Student membuat campaign (implicit, terikat 1 course)
     
 2. Campaign state awal: `pending`
     
-3. Donor mendanai campaign
+3. Funder mendanai campaign
     
 4. Jika total >= harga course → `target_reached`
     
@@ -273,7 +317,7 @@ Masing-masing alur **berdiri sendiri tapi saling terhubung**.
         
 6. Jika gagal:
     
-    - Donor bisa withdraw dana
+    - Funder bisa withdraw dana
         
 
 ### Prinsip Utama
@@ -308,7 +352,7 @@ Masing-masing alur **berdiri sendiri tapi saling terhubung**.
 
 ### Catatan
 
-- Sertifikat tidak transferable
+- Sertifikat tidak transferable (non-NFT spekulatif)
     
 - Sertifikat hanya bisa diklaim sekali
     

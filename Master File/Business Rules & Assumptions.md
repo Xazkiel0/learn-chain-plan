@@ -212,6 +212,66 @@ Admin hanya boleh:
 
 ---
 
+### BR-11 — Role Exclusivity (Teacher ≠ Student)
+
+- Satu akun/wallet hanya boleh memiliki **satu role aktif**:
+    
+    - Student, atau
+    
+    - Teacher
+        
+- Tidak ada role ganda (Dual Role) dalam satu identitas.
+    
+- Tujuannya: Mencegah *conflict of interest* (misal: self-funding, self-certification).
+
+---
+
+### BR-12 — Course Lifecycle Integrity
+
+- Course memiliki state yang mengikat:
+    
+    - `draft` → `published` (open) → `closed`
+        
+- Course yang sudah memiliki enrollment aktif:
+    
+    - **Tidak boleh dihapus** dari sistem.
+        
+    - Hanya boleh diubah statusnya menjadi `closed` (mencegah enrollment baru).
+        
+- Akses materi bagi student yang sudah enroll harus tetap ada selamanya (selama platform hidup).
+        
+- Course dengan status `closed` bersifat **Immutable** (tidak bisa diedit kontennya) demi menjaga integritas historis.
+
+---
+
+### BR-13 — Guest Access Limitation
+
+- Guest (User tanpa login):
+    
+    - Hanya memiliki akses **Read-Only** (melihat course, silabus, harga).
+        
+- Guest **dilarang keras**:
+    
+    - Melakukan transaksi on-chain.
+        
+    - Mengakses materi pembelajaran berbayar.
+        
+- Semua interaksi state-change membutuhkan **Login + Wallet Connection**.
+
+---
+
+### BR-14 — Scholarship Eligibility for Crowdfunding
+
+- Hak membuat campaign crowdfunding **eksklusif** untuk:
+    
+    - Student yang telah diverifikasi Admin sebagai **"Scholarship / Tidak Mampu"**.
+        
+- Student reguler (tanpa status ini) **tidak bisa** membuat campaign.
+    
+- Status ini diberikan secara **Off-chain** oleh Admin (sesuai A-02).
+
+---
+
 ## 4.3 System Constraints (Batasan Sistem)
 
 ### C-01 — Wallet as Financial Identity
@@ -275,6 +335,22 @@ Jika sistem tidak mendukung, maka **fitur tidak ada**.
     
 - Tidak ada upgrade contract tanpa migrasi eksplisit
     
+
+---
+
+### C-05 — Specific Functional Exclusions (Anti-Scope)
+
+- Sesuai batasan MVP, sistem **secara eksplisit meniadakan**:
+    
+    - **DAO / Voting Governance**
+    
+    - **Lending / Borrowing**
+    
+    - **AI Course Assistant**
+    
+    - **Secondary Market** (NFT Trading)
+        
+- Fitur-fitur ini dianggap **Out of Scope** dan tidak boleh diimplementasikan pada fase ini.
 
 ---
 

@@ -147,6 +147,11 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
         
     - Tanpa perubahan state
         
+3. Prinsip Web2.5:
+
+    - Interaksi konten & progress → Web2 (Database)
+
+    - Interaksi finansial & sertifikat → Web3 (Blockchain)
 
 ---
 
@@ -230,7 +235,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 - Enrollment aktif
     
-- Dana masuk ke teacher
+- Dana masuk ke teacher (99%) dan platform (1%)
     
 
 ---
@@ -278,7 +283,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 **Postcondition**:
 
-- Sertifikat tercatat on-chain
+- Sertifikat tercatat on-chain (Hash + Metadata)
     
 
 ---
@@ -312,7 +317,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 **Postcondition**:
 
-- Dana diproses ke teacher
+- Dana diproses ke teacher (99%) dan platform (1%)
     
 - Enrollment aktif
     
@@ -345,6 +350,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 - Course state `draft`
     
+- Config set (Paid/Free, Crowdfundable Y/N)
 
 ---
 
@@ -361,6 +367,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 - Course state `open`
     
+- Price & Config locked (immutable)
 
 ---
 
@@ -401,6 +408,7 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
 
 - Student exists
     
+- Verifikasi manual admin valid
 
 **Postcondition**:
 
@@ -460,6 +468,8 @@ Sebelum masuk daftar use case, sistem mengikuti prinsip berikut:
     
 - Teacher menarik dana crowdfund manual
     
+- Admin mengubah progress atau mengeluarkan sertifikat
+
 - Guest berinteraksi dengan blockchain
     
 

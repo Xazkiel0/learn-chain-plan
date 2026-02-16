@@ -85,6 +85,8 @@ Tidak ada:
     
 - Sync state on-chain → off-chain
     
+- **Scholarship/Financial Aid eligibility tracking (Admin decision sync)**
+    
 
 **Karakter**
 
@@ -129,9 +131,9 @@ Tidak ada:
     
     - Validasi harga
         
-    - Transfer ke teacher
+    - **Transfer ke teacher (99% Direct Transfer)**
         
-    - Fee ke platform
+    - **Fee ke platform (1% Protocol Fee)**
         
 
 ---
@@ -151,6 +153,8 @@ Tidak ada:
     - State machine campaign
         
     - Vault control
+        
+    - **Campaign Binding (1 Student : 1 Course)**
         
 
 ---
@@ -215,6 +219,18 @@ Tidak ada:
 
 ---
 
+### 7.6.4 Governance & Scholarship Flow
+
+1. Admin marks Student as "Scholarship Eligible" (Off-chain/Backend)
+
+2. Backend stores status
+
+3. Frontend checks status before allowing Campaign Creation
+
+4. Smart Contract verifies parameters (Optional: via optimistic UI restriction or Merkle proof if implemented)
+
+---
+
 ## 7.7 Integration Points
 
 ### 7.7.1 Wallet Provider
@@ -260,6 +276,7 @@ Backend **tidak boleh** menjadi tx sender.
 |---|---|
 |Frontend|❌|
 |Backend|❌|
+|**Admin Panel**|❌ (No direct fund access)|
 |Smart Contract|✅|
 
 Backend dianggap **honest-but-curious**, bukan trusted.
@@ -275,6 +292,7 @@ Backend dianggap **honest-but-curious**, bukan trusted.
 |Crowdfunding funds|Blockchain|
 |Progress|Backend|
 |Certificate validity|Blockchain|
+|**Scholarship Status**|**Backend (Admin Managed)**|
 
 ---
 
@@ -293,6 +311,12 @@ Backend dianggap **honest-but-curious**, bukan trusted.
     
 - No side effects
     
+
+### Admin Abuse Attempt
+
+- Admin tries to touch funds → **Rejected by Architecture** (No function exists)
+
+- Admin tries to override on-chain progress → **Ignored by Smart Contract**
 
 ---
 
